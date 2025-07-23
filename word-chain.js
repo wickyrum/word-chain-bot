@@ -1,6 +1,6 @@
 const DB_USED = new URL('./arsenal/used_words.txt', import.meta.url).pathname
 const SCOREBOARD = new URL('./arsenal/scores.json', import.meta.url).pathname
-const DB_JS =  new URL('/home/wickrum/word-chain-bot/arsenal/dataBase.js', import.meta.url).pathname
+const DB_JS =  new URL('./arsenal/dataBase.js', import.meta.url).pathname
 
 let lastUsr = undefined
 let lastWord = 'apple'
