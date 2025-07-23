@@ -1,11 +1,12 @@
 const DB_USED = new URL('./arsenal/used_words.txt', import.meta.url).pathname
 const SCOREBOARD = new URL('./arsenal/scores.json', import.meta.url).pathname
- 
+const DB_JS =  new URL('/home/wickrum/word-chain-bot/arsenal/dataBase.js', import.meta.url).pathname
+
 let lastUsr = undefined
 let lastWord = 'apple'
 let redundancy = undefined
 import dotenv from 'dotenv/config'
-import {wordSearch, wordWrite} from '/home/wickrum/word-chain-bot/arsenal/dataBase.js'
+const {wordSearch, wordWrite} = await import(DB_JS)
 import {Client, IntentsBitField, Embed} from "discord.js"
 import fs from 'node:fs/promises';
 import wordListPath from 'word-list';
@@ -106,4 +107,5 @@ client.on('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);
 }); 
 client.on('messageCreate', messageHandler) 
+console.log(DB_JS)
 client.login(process.env.DISCORD_TOKEN)
