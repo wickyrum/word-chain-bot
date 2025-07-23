@@ -8,11 +8,12 @@
 // 6: react that number to that message
 // 7: add that score to the user tally
 // or reduce that score from the user tally
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import * as os from 'os'
 
 export async function wordSearch(word, PATH) {
-    const readFile = await fs.readFileSync(PATH,'utf-8').split('\n')
+    const preReadFile = await fs.readFile(PATH,'utf-8')
+    const readFile = preReadFile.split('\n')
     if (readFile.includes(word)) {
         return true
     }
@@ -24,7 +25,7 @@ export async function wordSearch(word, PATH) {
 export async function wordWrite(word, PATH) {
     const val = await wordSearch(word, PATH)
     if (val == false) {
-        const appendFile = fs.appendFileSync(PATH,'\n'+word, 'utf-8')
+        const appendFile = fs.appendFile(PATH,'\n'+word, 'utf-8')
     }
     else {
         return false
