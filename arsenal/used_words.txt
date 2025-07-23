@@ -28,3 +28,7 @@ pimp
 clear
 emperor
 rights
+enter
+ramen
+northwest
+trumpet
