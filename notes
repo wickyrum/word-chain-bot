@@ -1,6 +1,0 @@
-TODO 
-[ ] 1) Deal with obscure endings.
-[ ] 2) Sync to Async file read/writes.
-[ ] 3) Local cache for memory instead of reading off of the disk everytime.
-[ ] 4) Save the scoreboard to disk after every minute.
-[ ] 
